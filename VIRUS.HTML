@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIRUS 🙈</title>
+
+<style>
+  body {
+    background-color: #ffd6e7;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .card {
+    background: #fff0f6;
+    width: 85%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    border-radius: 20px;
+    border: 2px solid #e879a5;
+    position: relative;
+    min-height: 280px;
+  }
+
+  .page {
+    display: none;
+  }
+
+  .active {
+    display: block;
+  }
+
+  h1, h2 {
+    color: #d85b8a;
+  }
+
+  p {
+    color: #4a2635;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  button {
+    background: #e879a5;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 15px;
+    font-size: 14px;
+    margin: 8px 4px 0 4px;
+    cursor: pointer;
+  }
+
+  .funny-btn {
+    background: #c84d7d;
+  }
+
+  #runawayBtn {
+    background: #b56576;
+    position: relative;
+    transition: all 0.15s ease;
+  }
+
+  .secret-text {
+    font-size: 14px;
+    color: #d85b8a;
+    font-weight: bold;
+    margin-top: 10px;
+    display: none;
+  }
+
+  .heart {
+    font-size: 35px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- PAGE 1 -->
+  <div class="page active">
+    <div class="heart"></div>
+
+    <h1>HELLO MICHA</h1>
+
+    <p>🦖🦖🦖</p>
+
+    <button onclick="nextPage()">NEXT NA</button>
+
+    <br>
+
+    <button class="funny-btn" onclick="toggleSecret('secret1')">
+      Bawal Pindutin 🛑
+    </button>
+
+    <div id="secret1" class="secret-text">
+      PANGHE PININDOT TLGA(❤️)
+    </div>
+  </div>
+
+
+  <!-- PAGE 2 -->
+  <div class="page">
+
+    <h2>SO AYUN NGA</h2>
+
+    <p>
+      since we're having a great time na lately and i know that you are still taking care of yourself,
+      may sasabihin lang sana ako sayo
+    </p>
+
+    <button onclick="nextPage()">next</button>
+
+  </div>
+
+
+  <!-- PAGE 3 -->
+  <div class="page">
+
+    <div class="heart">♡</div>
+
+    <h2>I JUST WANT YOU TO KNOW THAT</h2>
+
+    <p>
+    i like you and honestly, i love you too.
+    </p>
+
+    <p>
+      sa totoo lang micha, these past few months,
+      na realized ko na i've really fallen in love with YOU.
+<p>
+  siguro nahulog din ako sayo dahil sa mga little things about you.
+
+</p>
+
+<p>
+  hindi man ikaw perfect, pero gusto kita kung sino ka.
+</p>
+      
+      that's really how i feel about you.
+      alam ko naman na may taong mahalaga pa rin sayo, and i respect that naman.
+    </p>
+
+    <p>
+      hindi man ako makaamin dati,
+      pero sa araw na ito ay gagawin ko na.
+      since people change diba? bwhahah
+    </p>
+
+    <button onclick="nextPage()">next</button>
+
+  </div>
+
+
+  <!-- PAGE 4 -->
+  <div class="page">
+
+    <h2>so yeah...</h2>
+
+    <p>
+      kahit sa mga random na usapan natin,
+      paglalaro, tawanan, at kahit yung mga simpleng  sa mga simpleng bagay lang,
+      i really enjoy talking and spending time with YOU.
+    </p>
+
+    <p>
+      alam ko na things haven't always been perfect between us,
+      pero i'm glad na nagkausap ulit tayo
+      and nagkaroon ulit tayo ng good times.
+    </p>
+
+    <button onclick="nextPage()">next</button>
+
+  </div>
+
+
+  <!-- PAGE 5 -->
+  <div class="page">
+
+    <h2>NO PRESSURE ITO AH</h2>
+
+    <p>
+      i don't want this to make things awkward between us
+      or make you feel pressured.
+    </p>
+
+    <p>
+      i'm just being honest and showing you
+      kung ano nararamdaman ko sayo
+    </p>
+
+    <p>
+      bwahahah 😭
+    </p>
+
+    <div class="heart">♡</div>
+
+    <br>
+
+    <button onclick="finish()">thats it lng</button>
+
+    <button id="runawayBtn"
+      onmouseover="dodge()"
+      onclick="dodge()"
+      ontouchstart="dodge()">
+      ayaw ko nga 😜
+    </button>
+
+  </div>
+
+</div>
+
+
+<script>
+
+let page = 0;
+
+const pages = document.querySelectorAll(".page");
+
+
+function nextPage() {
+
+  if (page < pages.length - 1) {
+
+    pages[page].classList.remove("active");
+
+    page++;
+
+    pages[page].classList.add("active");
+
+  }
+
+}
+
+
+function toggleSecret(id) {
+
+  const el = document.getElementById(id);
+
+  if (el.style.display === "block") {
+
+    el.style.display = "none";
+
+  } else {
+
+    el.style.display = "block";
+
+  }
+
+}
+
+
+function dodge() {
+
+  const btn = document.getElementById("runawayBtn");
+
+  const x = Math.floor(Math.random() * 160) - 80;
+
+  const y = Math.floor(Math.random() * 100) - 50;
+
+  btn.style.transform = `translate(${x}px, ${y}px)`;
+
+}
+
+
+function finish() {
+
+  document.querySelector(".card").innerHTML = `
+
+    <div class="heart">♡</div>
+
+    <h2>AH AHA AHA AH 🫣</h2>
+
+    <p>
+      thank you for your time!
+      <br>
+      nahihiya tuloy ako 🫣
+      <br>
+      diowe out✌️✌️✌️✌️
+    </p>
+
+  `;
+
+}
+
+</script>
+
+</body>
+</html>
